@@ -10,9 +10,24 @@
   </head>
   <body>
     <div class="w-full">
-      <div class="flex items-center justify-center min-h-screen">
-        <div class="text-center">
-          <h1 class="text-5xl font-bold text-white" id="text"></h1>
+      <div class="overlay"></div>
+      <div
+        class="flex items-center justify-center min-h-screen max-w-3xl mx-auto"
+      >
+        <div class="text-center z-10">
+          <h1
+            class="text-3xl font-bold text-white pt-5 md:text-5xl"
+            id="text"
+          ></h1>
+          <p id="paragraph" class="text-white p-5 md:text-2xl"></p>
+          <br />
+          <a
+            href="https://padlet.com/dearsunorchid/dylan19"
+            class="text-white bg-blue-500 p-5 rounded-3xl w-1/2 md:w-1/4 mx-auto hidden hover:bg-blue-600"
+            id="button"
+            target="_blank"
+            >Tekan tombol ini!</a
+          >
         </div>
       </div>
     </div>
@@ -20,10 +35,23 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-      var typed = new Typed("#text", {
-        strings: ["Kamu berhasil masuk!"],
+      var text = new Typed("#text", {
+        strings: ["Happy birthday, Dylan!"],
         typeSpeed: 50,
         showCursor: false,
+        onComplete: () => {
+          var caption = new Typed("#paragraph", {
+            strings: [
+              "congrats on getting older, you’re so amazing for making it this far. i really mean it when i say happy birthday and i wanna be a gentle person to keep my promise. i've sent many best prayers to God for your future well-being since i can't type a long message here, but basically, hope you always have a good life. here are some b-day wishes from my friends. thanks for being my buddy. be happy!",
+            ],
+            typeSpeed: 20,
+            showCursor: false,
+            onComplete: () => {
+              document.getElementById("button").classList.remove("hidden");
+              document.getElementById("button").classList.add("block");
+            },
+          });
+        },
       });
     </script>
   </body>

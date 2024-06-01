@@ -10,9 +10,10 @@
   </head>
   <body>
     <div class="w-full">
+      <div class="overlay"></div>
       <div class="flex items-center justify-center min-h-screen">
-        <div class="text-center">
-          <h1 class="text-5xl font-bold text-white" id="text"></h1>
+        <div class="text-center z-10">
+          <h1 class="text-3xl font-bold text-white md:text-5xl" id="text"></h1>
           <input
             type="text"
             class="mt-4 p-2 rounded-xl border-2 border-gray-300 focus:outline-none focus:border-blue-500"
@@ -32,7 +33,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       var typed = new Typed("#text", {
-        strings: ["Halo bro, masukin passwordnya dulu ya!"],
+        strings: ["Masukkin 4 angka, tanggal + bulan lahir rasya"],
         typeSpeed: 50,
         showCursor: false,
       });
@@ -41,7 +42,7 @@
 
       const processInput = () => {
         if (input.value == 2606) {
-          setTimeout((document.location.href = "main.html"), 3000);
+          document.location.href = "main.html";
         } else {
           Swal.fire({
             title: "Gagal masuk, coba lagi",
