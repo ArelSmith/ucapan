@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ucapan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="w-full">
+      <div class="flex items-center justify-center min-h-screen">
+        <div class="text-center">
+          <h1 class="text-5xl font-bold text-white" id="text"></h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      var typed = new Typed("#text", {
+        strings: ["Kamu berhasil masuk!"],
+        typeSpeed: 50,
+        showCursor: false,
+      });
+    </script>
+  </body>
+</html>
